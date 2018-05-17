@@ -8,10 +8,10 @@ export default class App extends React.Component {
     }
     return (
       
-        <Image 
-            style={{resizeMode: 'cover', flex:1, height: null, width: null}}
-            source={img} 
-        />
+      <Image 
+          style={{resizeMode: 'cover', flex:1, height: null, width: null}}
+          source={img} 
+      />
       
     )
   }

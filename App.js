@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 
 import ImageFullScreen from './ImageFullScreen'
 import Props from './Props'
+import FlexAndMapArray from './FlexAndMapArray'
 
 class App extends React.Component {
   render() {
@@ -15,7 +16,9 @@ class App extends React.Component {
 
         {/* <ImageFullScreen /> */}
 
-        <Props msg="Fred" />
+        {/* <Props msg="Fred" /> */}
+
+        <FlexAndMapArray />
         
       </View>
     )
