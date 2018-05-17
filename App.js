@@ -6,6 +6,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import ImageFullScreen from './ImageFullScreen'
 import Props from './Props'
 import FlexAndMapArray from './FlexAndMapArray'
+import TextBlink from './TextBlink'
 
 class App extends React.Component {
   render() {
@@ -18,8 +19,10 @@ class App extends React.Component {
 
         {/* <Props msg="Fred" /> */}
 
-        <FlexAndMapArray />
-        
+        {/* <FlexAndMapArray /> */}
+
+        <TextBlink /> 
+
       </View>
     )
   }
