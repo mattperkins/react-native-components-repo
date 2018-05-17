@@ -2,7 +2,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-
+// private component
 class Blink extends React.Component {  
     constructor(props) {
         super(props)
@@ -31,7 +31,7 @@ class Blink extends React.Component {
 
 
 
-
+// public component
 export default class TextBlink extends React.Component {
     render() {
         return <Blink style={{fontSize: 40}} inputText="I am blinking marvelous" />
