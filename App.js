@@ -11,10 +11,11 @@ class App extends React.Component {
 
     return (
       <View style={{flex:1}}>
-        
-        <ImageFullScreen />
+        {/* //// comment out as needed to preview \\\\ */}
 
-        {/* <Props msg="Fred" /> */}
+        {/* <ImageFullScreen /> */}
+
+        <Props msg="Fred" />
         
       </View>
     )
