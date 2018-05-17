@@ -1,11 +1,12 @@
-import Expo from 'expo' // add if this component is app entry point
+import Expo from 'expo' 
+
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
 import ImageFullScreen from './ImageFullScreen'
 import Props from './Props'
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
 
     return (
@@ -29,3 +30,4 @@ const styles = StyleSheet.create({
   // },
 })
 
+export default Expo.registerRootComponent(App) 
