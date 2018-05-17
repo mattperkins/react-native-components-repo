@@ -15,13 +15,13 @@ class App extends React.Component {
       <View style={{flex:1}}>
         {/* //// comment out as needed to preview \\\\ */}
 
-        {/* <ImageFullScreen /> */}
+        <ImageFullScreen />
 
         {/* <Props msg="Fred" /> */}
 
         {/* <FlexAndMapArray /> */}
 
-        <TextBlink /> 
+        {/* <TextBlink />  */}
 
       </View>
     )
