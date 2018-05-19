@@ -5,8 +5,11 @@
 ////////////////////
 Components:
 
-    FullScreenImage 
+    BasicForm (email and password field)
+    FlexAndMapArray (blocks and flex elements)
+    ImageFullScreen 
     Props (private to public component exporting to App component)
+    TextBlink
 
 ////////////////////
 
