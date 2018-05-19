@@ -1,21 +1,24 @@
 import Expo from 'expo' 
 
-import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import React, {Component, Fragment} from 'react'
+// import { StyleSheet, Text, View, Image } from 'react-native'
 
-import ImageFullScreen from './ImageFullScreen'
-import Props from './Props'
-import FlexAndMapArray from './FlexAndMapArray'
-import TextBlink from './TextBlink'
+import ImageFullScreen from './components/ImageFullScreen'
+import Props from './components/Props'
+import FlexAndMapArray from './components/FlexAndMapArray'
+import TextBlink from './components/TextBlink'
+import BasicForm from './components/BasicForm'
 
-class App extends React.Component {
+class App extends Component {
   render() {
 
     return (
-      <View style={{flex:1}}>
+      <Fragment>
         {/* //// comment out as needed to preview \\\\ */}
 
-        <ImageFullScreen />
+        <BasicForm />
+
+        {/* <ImageFullScreen /> */}
 
         {/* <Props msg="Fred" /> */}
 
@@ -23,18 +26,10 @@ class App extends React.Component {
 
         {/* <TextBlink />  */}
 
-      </View>
+      </Fragment>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: '#f7f7f7',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
-})
 
 export default Expo.registerRootComponent(App) 
