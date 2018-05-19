@@ -8,7 +8,8 @@ export default class Props extends React.Component{
     constructor(props) {
     super(props)
         this.state = {
-           typedText: 'Please add text' 
+           email: ' ',
+           password: ' ' 
         }
     }
     render() {            
@@ -28,11 +29,32 @@ export default class Props extends React.Component{
                     placeholderTextColor='mediumaquamarine'
                     onChangeText={ (text) => {
                             this.setState((previousState) => {
-                                return { typedText: text }
+                                return { email: text }
                             })}   
                     }
                 />
-                <Text style={{marginTop: 50}}>{this.state.typedText}</Text>
+                <Text style={{marginVertical: 50}}>{this.state.email}</Text>
+
+
+                <TextInput 
+                    style={{
+                        width: '50%',
+                        height:40,
+                        padding: 10,
+                        borderColor: 'gray',
+                        borderWidth: 1
+                    }}
+                    keyboardType='default'
+                    placeholder='Enter your password'
+                    placeholderTextColor='mediumaquamarine'
+                    secureTextEntry={true}
+                    onChangeText={ (text) => {
+                            this.setState((previousState) => {
+                                return { password: text }
+                            })}   
+                    }
+                />
+                <Text style={{marginVertical: 50}}>{this.state.password}</Text>
             </View>
        
         )
