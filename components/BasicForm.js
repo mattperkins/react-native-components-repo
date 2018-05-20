@@ -14,22 +14,23 @@ export default class Props extends React.Component{
         }
     }
 
-    UNSAFE_componentWillMount(){
-        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', ()=> {
-            this.setState(()=> {
-                return { message: 'Keyboard is shown' }
-            })
-        })
-        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', ()=> {
-            this.setState(()=> {
-                return { message: 'Keyboard is Hidden' }
-            })
-        })
-    }
-    componentWillUnmount(){
-        this.keyboardDidShowListener.remove()
-        this.keyboardDidHideListener.remove()
-    }
+    // \\\\\ issue: rerender on hide keyboard ?? //////
+    // UNSAFE_componentWillMount(){
+    //     this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', ()=> {
+    //         this.setState(()=> {
+    //             return { message: 'Keyboard is shown' }
+    //         })
+    //     })
+    //     this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', ()=> {
+    //         this.setState(()=> {
+    //             return { message: 'Keyboard is Hidden' }
+    //         })
+    //     })
+    // }
+    // componentWillUnmount(){
+    //     this.keyboardDidShowListener.remove()
+    //     this.keyboardDidHideListener.remove()
+    // }
 
     render() {            
         return (
