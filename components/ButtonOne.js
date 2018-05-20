@@ -35,6 +35,16 @@ export default class ButtonOne extends React.Component{
     }
 }
 
-
-
-
+/*
+// instructions for cross platform button
+$ yarn add react-native-button
+import Button from 'react-native-button'
+<Button
+    style={{fontSize: 25,
+    color: 'white',
+    backgroundColor: 'green',
+    padding: 15,
+    borderRadius: 20}}
+    onPress={()=> Alert.alert('This button will work (correctly style) on both IOS and Android')}
+>Cross Platform Button Solution</Button>
+*/
