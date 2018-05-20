@@ -10,6 +10,8 @@ export default class ScrollViewer extends React.Component {
 
       <ScrollView 
         keyboardDismissMode='on-drag'
+        maximumZoomScale={3}
+        minimumZoomScale={0.2}
       >
         <Text 
           style={{
