@@ -8,6 +8,7 @@ import Props from './components/Props'
 import FlexAndMapArray from './components/FlexAndMapArray'
 import TextBlink from './components/TextBlink'
 import BasicForm from './components/BasicForm'
+import ButtonOne from './components/ButtonOne'
 
 class App extends Component {
   render() {
@@ -16,7 +17,9 @@ class App extends Component {
       <Fragment>
         {/* //// comment out as needed to preview \\\\ */}
 
-        <BasicForm />
+        <ButtonOne />
+
+        {/* <BasicForm /> */}
 
         {/* <ImageFullScreen /> */}
 
