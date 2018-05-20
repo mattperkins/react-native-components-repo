@@ -10,7 +10,8 @@ import TextBlink from './components/TextBlink'
 import BasicForm from './components/BasicForm'
 import Buttons from './components/Buttons'
 import Touchables from './components/Touchables'
-import ScrollViewer from './components/ScrollViewer'
+import VerticalScrollView from './components/VerticalScrollView'
+import HorizontalScrollView from './components/HorizontalScrollView'
 
 class App extends Component {
   render() {
@@ -19,7 +20,9 @@ class App extends Component {
       <Fragment>
         {/* //// comment out as needed to preview \\\\ */}
 
-        <ScrollViewer />
+        <HorizontalScrollView />
+
+        {/* <VerticalScrollView /> */}
 
         {/* <Touchables /> */}
 

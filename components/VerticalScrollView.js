@@ -3,7 +3,7 @@
 import React from 'react'
 import { Text, View, ScrollView, Dimensions, Image, TextInput } from 'react-native'
 
-export default class ScrollViewer extends React.Component {
+export default class VerticalScrollView extends React.Component {
   render() {
     let screenWidth = Dimensions.get('window').width
     return (
@@ -12,6 +12,7 @@ export default class ScrollViewer extends React.Component {
         keyboardDismissMode='on-drag'
         maximumZoomScale={3}
         minimumZoomScale={0.2}
+        // contentContainerStyle={{paddingLeft: 20}}
       >
         <Text 
           style={{
