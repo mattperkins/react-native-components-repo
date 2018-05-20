@@ -1,7 +1,6 @@
 import React from 'react'
 import { Alert, Image, Text, View, 
     TouchableHighlight, 
-    TouchableNativeFeedback, 
     TouchableOpacity, 
     TouchableWithoutFeedback } from 'react-native'
 
@@ -35,6 +34,24 @@ export default class Touchables extends React.Component {
 
         </TouchableHighlight>
 
+        <TouchableOpacity
+            style={{
+                marginTop: 20,
+                width: 200,
+                height: 100,
+                backgroundColor: '#f33'
+            }}
+            onPress={()=> Alert.alert('Touchable Opacity')}
+        >
+            <Text 
+                style={{
+                    fontSize: 20,
+                    color: 'white',
+                    textAlign: 'center',
+                    lineHeight: 100
+                }}>TouchableOpacity
+            </Text>
+        </TouchableOpacity>
       </View>
     )
   }
