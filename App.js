@@ -8,8 +8,9 @@ import Props from './components/Props'
 import FlexAndMapArray from './components/FlexAndMapArray'
 import TextBlink from './components/TextBlink'
 import BasicForm from './components/BasicForm'
-import ButtonOne from './components/ButtonOne'
+import Buttons from './components/Buttons'
 import Touchables from './components/Touchables'
+import ScrollViewer from './components/ScrollViewer'
 
 class App extends Component {
   render() {
@@ -18,9 +19,11 @@ class App extends Component {
       <Fragment>
         {/* //// comment out as needed to preview \\\\ */}
 
-        <Touchables />
+        <ScrollViewer />
 
-        {/* <ButtonOne /> */}
+        {/* <Touchables /> */}
+
+        {/* <Buttons /> */}
 
         {/* <BasicForm /> */}
 
