@@ -10,9 +10,27 @@ export default class Props extends React.Component{
         this.state = {
            email: ' ',
            password: ' ',
-           typedDescription: 'Fill in this box...'
+           message: 'Add your message here...'
         }
     }
+
+    UNSAFE_componentWillMount(){
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', ()=> {
+            this.setState(()=> {
+                return { message: 'Keyboard is shown' }
+            })
+        })
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', ()=> {
+            this.setState(()=> {
+                return { message: 'Keyboard is Hidden' }
+            })
+        })
+    }
+    componentWillUnmount(){
+        this.keyboardDidShowListener.remove()
+        this.keyboardDidHideListener.remove()
+    }
+
     render() {            
         return (
             
@@ -50,12 +68,13 @@ export default class Props extends React.Component{
                     placeholderTextColor='#333'
                     secureTextEntry={true}
                     onChangeText={ (text) => {
-                            this.setState((previousState) => {
+                            this.setState(() => {
                                 return { password: text }
                             })} }
                 />
                 <Text style={{marginVertical: 50}}>{this.state.password}</Text>
 
+                <Text>{this.state.message}</Text>
                 <TextInput 
                     style={{
                         width: '50%',
@@ -76,8 +95,8 @@ export default class Props extends React.Component{
                     onSubmitEditing={Keyboard.dismiss}
                     returnKeyType='done'
                     onChangeText={ (text) => {
-                            this.setState((previousState) => {
-                                return { typedDescription: text }
+                            this.setState(() => {
+                                return { message: text }
                             })} }
                 />
             </View>
