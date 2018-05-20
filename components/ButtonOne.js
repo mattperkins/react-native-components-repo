@@ -1,4 +1,4 @@
-
+// use react-native-button library to resolve Android styling weirdness
 
 import React from 'react'
 import { View, Button, Alert } from 'react-native'
@@ -16,6 +16,7 @@ export default class ButtonOne extends React.Component{
                 <Button 
                     onPress={()=> Alert.alert("Button One pressed!")}
                     title="ButtonOne"    
+                    // 'color' on Android refers to the background not text color (yeah, ridiculous init) 
                     color="white"
                 />
                 </View>
@@ -25,6 +26,7 @@ export default class ButtonOne extends React.Component{
                 <Button 
                     onPress={this.BtnTwoPress}
                     title="ButtonTwo"    
+                    // 'color' on Android refers to the background not text color (yeah, ridiculous init)
                     color="#333"
                 />
                 </View>
