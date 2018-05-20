@@ -14,7 +14,7 @@ export default class Touchables extends React.Component {
         <TouchableHighlight
             onPress={()=> Alert.alert("Touchable Highlight")}
             underlayColor='red'
-            onShowUnderlay={()=> alert("onShowUnderlay button!")}
+            onShowUnderlay={()=> alert("Image Based Button with onShowUnderlay button!")}
         >
         <View style={{backgroundColor: 'white'}}>
         <Image
@@ -36,12 +36,13 @@ export default class Touchables extends React.Component {
 
         <TouchableOpacity
             style={{
-                marginTop: 20,
+                marginTop: 50,
                 width: 200,
                 height: 100,
-                backgroundColor: '#f33'
+                backgroundColor: '#f33',
             }}
             onPress={()=> Alert.alert('Touchable Opacity')}
+            activeOpacity={0.7}
         >
             <Text 
                 style={{
@@ -52,6 +53,38 @@ export default class Touchables extends React.Component {
                 }}>TouchableOpacity
             </Text>
         </TouchableOpacity>
+
+        {/* Triple functionality: press down, then push and release */}
+        <TouchableWithoutFeedback
+            // comment out where required
+            
+            // onPress={()=> Alert.alert('Touchable Without Feedback')}
+            
+            // onPressIn={()=> Alert.alert('On Press In')}
+            
+            // onPressOut={()=> Alert.alert('On Press Out')}
+            
+            // disabled={false}
+            
+            onLongPress={()=> Alert.alert('On Long Press')}
+        >
+            <View style={{
+                marginTop: 50,
+                width: 300,
+                height: 100,
+                backgroundColor: '#f6f5',
+            }}>
+                <Text 
+                    style={{
+                        fontSize: 20,
+                        color: '#333',
+                        textAlign: 'center',
+                        lineHeight: 100
+                    }}>TouchableWithoutFeedback
+                </Text>
+            </View>
+        </TouchableWithoutFeedback>
+
       </View>
     )
   }
