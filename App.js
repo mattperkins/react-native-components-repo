@@ -12,6 +12,7 @@ import Buttons from './components/Buttons'
 import Touchables from './components/Touchables'
 import VerticalScrollView from './components/VerticalScrollView'
 import HorizontalScrollView from './components/HorizontalScrollView'
+import BasicFlatList from './components/BasicFlatList'
 
 class App extends Component {
   render() {
@@ -20,7 +21,9 @@ class App extends Component {
       <Fragment>
         {/* //// comment out as needed to preview \\\\ */}
 
-        <HorizontalScrollView />
+        <BasicFlatList />
+
+        {/* <HorizontalScrollView /> */}
 
         {/* <VerticalScrollView /> */}
 
