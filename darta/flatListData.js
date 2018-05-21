@@ -8,6 +8,7 @@ var flatListData = [
     {
         "key": "2",
         "name": "Fresh Mushroom",
+        "imageUrl": "http://srrc.com/stub/50",
         "foodDescription": "Fresh Mushroom with vegetables"
     },
     {
