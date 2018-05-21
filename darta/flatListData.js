@@ -14,6 +14,7 @@ var flatListData = [
     {
         "key": "3",
         "name": "Japanese Oyster",
+        "imageUrl": "http://srrc.com/stub/50",
         "foodDescription": "Oysters with ice rock"
     },
     {
