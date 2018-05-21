@@ -26,6 +26,7 @@ var flatListData = [
     {
         "key": "5",
         "name": "Mixed Salad",
+        "imageUrl": "http://srrc.com/stub/50",
         "foodDescription": "Green leaves and mixed veg"
     },
 ]
