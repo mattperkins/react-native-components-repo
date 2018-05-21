@@ -5,21 +5,27 @@ import flatListData from '../darta/flatListData'
 class FlatListItem extends React.Component {
   render() {
     return (
+      <View>
+
       <View
         style={{
           flex: 1,
-          backgroundColor: this.props.index % 2 == 0 ? 'mediumseagreen' : 'tomato',
+          // backgroundColor: this.props.index % 2 == 0 ? 'mediumseagreen' : 'tomato',
+          backgroundColor: 'mediumseagreen', 
           flexDirection: 'row'
         }}
       >
 
-      <Image style={{width: 100, height: 100, margin: 5}} source={{uri: this.props.item.imageUrl}} />
+      <Image style={{width: 100, height: 120, margin: 5}} source={{uri: this.props.item.imageUrl}} />
 
-      <View style={{flex: 1, flexDirection: 'column'}}>
-        <Text style={styles.flatListItem}>{this.props.item.name}</Text>
-        <Text style={styles.flatListItem}>{this.props.item.foodDescription}</Text>
+      <View style={{flex: 1, flexDirection: 'column', marginVertical: 20}}>
+        <Text style={ styles.flatListItem }>{this.props.item.name}</Text>
+        <Text style={ styles.flatListItem }>{this.props.item.foodDescription}</Text>
       </View>  
 
+      </View>
+
+      <View style={{height: 1, backgroundColor: 'white'}}></View>
       </View>
     )
   }
