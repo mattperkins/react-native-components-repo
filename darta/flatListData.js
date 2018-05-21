@@ -2,6 +2,7 @@ var flatListData = [
     {
         "key": "1",
         "name": "Cream Tea",
+        "imageUrl": "http://srrc.com/stub/50",
         "foodDescription": "A cup of cream tea"
     },
     {
