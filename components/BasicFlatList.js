@@ -13,10 +13,13 @@ class FlatListItem extends React.Component {
         }}
       >
 
-      <Text style={styles.flatListItem}>{this.props.item.name}</Text>
+      <Image style={{width: 100, height: 100, margin: 5}} source={{uri: this.props.item.imageUrl}} />
 
-      <Text style={styles.flatListItem}>{this.props.item.foodDescription}</Text>
-      
+      <View style={{flex: 1, flexDirection: 'column'}}>
+        <Text style={styles.flatListItem}>{this.props.item.name}</Text>
+        <Text style={styles.flatListItem}>{this.props.item.foodDescription}</Text>
+      </View>  
+
       </View>
     )
   }
