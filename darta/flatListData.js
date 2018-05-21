@@ -20,6 +20,7 @@ var flatListData = [
     {
         "key": "4",
         "name": "Korean Kimchi",
+        "imageUrl": "http://srrc.com/stub/50",
         "foodDescription": "Traditional Korean Dish"
     },
     {
