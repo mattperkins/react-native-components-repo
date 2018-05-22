@@ -12,13 +12,14 @@ class FlatListItem extends React.Component {
           flex: 1,
           // backgroundColor: this.props.index % 2 == 0 ? 'mediumseagreen' : 'tomato',
           backgroundColor: 'mediumseagreen', 
-          flexDirection: 'row'
+          flexDirection: 'row',
+          alignItems: 'center'
         }}
       >
 
-      <Image style={{width: 100, height: 120, margin: 5}} source={{uri: this.props.item.imageUrl}} />
+      <Image style={{width: 100, height: 100, margin: 5}} source={{uri: this.props.item.imageUrl}} />
 
-      <View style={{flex: 1, flexDirection: 'column', marginVertical: 20}}>
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
         <Text style={ styles.flatListItem }>{this.props.item.name}</Text>
         <Text style={ styles.flatListItem }>{this.props.item.foodDescription}</Text>
       </View>  
