@@ -1,9 +1,9 @@
-import React from 'react'
-import { StyleSheet, Image, Text, View, FlatList, Dimensions, Alert } from 'react-native'
+import React, {Component} from 'react'
+import { StyleSheet, Image, Text, View, FlatList, Dimensions, Alert, Platform, TouchableHighlight } from 'react-native'
 import flatListData from '../darta/flatListData'
 import Swipeout from 'react-native-swipeout'
 
-class FlatListItem extends React.Component {
+class FlatListItem extends Component {
   constructor(props) {
   super(props)
     this.state = {
@@ -56,7 +56,7 @@ class FlatListItem extends React.Component {
       
       <Swipeout {...swipeSettings}>
 
-        <View>
+        <View style={{flex: 1, flexDirection: 'column'}}>
 
       <View
         style={{
@@ -78,7 +78,8 @@ class FlatListItem extends React.Component {
       </View>
 
       <View style={{height: 1, backgroundColor: 'white'}}></View>
-      </View>
+    
+    </View>
 
       </Swipeout>
       
@@ -95,25 +96,45 @@ const styles = StyleSheet.create({
   }
 })
 
-export default class BasicFlatList extends React.Component {
+export default class BasicFlatList extends Component {
   constructor(props) {
   super(props)
   this.state = ({
-   deletedRowkey: null
+   deletedRowKey: null
   })
   }
   refreshFlatList = (deletedKey)=>{
     this.setState((prevState) => {
-      deletedRowkey: deletedKey
+      deletedRowKey: deletedKey
     })
   }
+
+
+_onPressAdd = () => {
+    console.log('Top Button Pressed')
+    alert('You added an item')
+}
 
   render() {
     
     return (
    
-      <View style={{flex:1, marginTop:100}}>
-      
+      <View style={{flex:1, marginTop: Platform.OS === 'ios' ? 34 : 0}}>
+
+        <View style={{backgroundColor: 'tomato', height: 64, flexDirection: 'row', justifyContent:'flex-end', alignItems: 'center'}}>
+          <TouchableHighlight style={{ margin: 5 }} 
+            underlayColor='tomato'
+            onPress={this._onPressAdd}
+          >
+          <Image 
+            style={{width: 55, height: 55}}
+            source={{uri: 'http://srrc.com/stub/50'}}
+          />
+          </TouchableHighlight>
+            
+         
+        </View>
+
         <FlatList
           data={flatListData}
           renderItem={({item, index})=>{
