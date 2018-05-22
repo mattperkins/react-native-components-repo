@@ -61,8 +61,7 @@ class FlatListItem extends Component {
       <View
         style={{
           flex: 1,
-          // backgroundColor: this.props.index % 2 == 0 ? 'mediumseagreen' : 'tomato',
-          backgroundColor: 'mediumseagreen', 
+          backgroundColor: this.props.index % 2 == 0 ? 'mediumseagreen' : 'tomato',
           flexDirection: 'row',
           alignItems: 'center'
         }}
@@ -100,12 +99,14 @@ export default class BasicFlatList extends Component {
   constructor(props) {
   super(props)
   this.state = ({
-   deletedRowKey: null
+   deletedRowKey: null,
   })
   }
   refreshFlatList = (deletedKey)=>{
     this.setState((prevState) => {
-      deletedRowKey: deletedKey
+      return {
+        deletedRowKey: deletedKey
+      }
     })
   }
 
