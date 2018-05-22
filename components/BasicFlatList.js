@@ -30,6 +30,7 @@ class FlatListItem extends React.Component {
       right: [
         {
           onPress: () => {
+            const deletingRow = this.state.activeRowKey
             Alert.alert(
               'Alert',
               'Are you sure you want to delete ?',
@@ -37,6 +38,8 @@ class FlatListItem extends React.Component {
                 {text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                 {text: 'Yes', onPress: () => {
                   flatListData.splice(this.props.index, 1)
+                  // Refresh FlatList on delete
+                  this.props.parentFlatList.refreshFlatList(deletingRow)
                 }}
               ],
               { cancelable: true }
@@ -93,6 +96,18 @@ const styles = StyleSheet.create({
 })
 
 export default class BasicFlatList extends React.Component {
+  constructor(props) {
+  super(props)
+  this.state = ({
+   deletedRowkey: null
+  })
+  }
+  refreshFlatList = (deletedKey)=>{
+    this.setState((prevState) => {
+      deletedRowkey: deletedKey
+    })
+  }
+
   render() {
     
     return (
@@ -104,7 +119,7 @@ export default class BasicFlatList extends React.Component {
           renderItem={({item, index})=>{
             // console.log(`Item = ${JSON.stringify(item)}, index = ${index}`)
             return (
-              <FlatListItem item={item} index={index} />
+              <FlatListItem item={item} index={index} parentFlatList={this}/> // this = make FlatList props of flatListItem
             )
           }}
 
