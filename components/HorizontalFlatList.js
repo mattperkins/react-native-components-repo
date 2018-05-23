@@ -1,20 +1,29 @@
 import React, { Component, Fragment } from 'react'
-import { FlatList, StyleSheet, Text, View, Image, ImageBackground, Alert, Platform, TouchableHighlight, TouchableOpacity, ScrollView, Button, TextInput } from 'react-native'
+import { FlatList, StyleSheet, Text, View, Image, ImageBackground, Alert, Platform, TouchableHighlight, TouchableOpacity, ScrollView, Button, TextInput } from 
+'react-native'
 
-class HorizontalFlatListItem {
+import { horizontalStatus } from '../darta/horizontalFlatListData'
+import { horizontalFlatListData } from '../darta/horizontalFlatListData'
+
+class HorizontalFlatListItem extends Component {
     render() {
         return (
             <View style={{
                 flex:1,
                 flexDirection:'column',
                 alignItems:'center',
-                width:90,
+                width:100,
                 borderRadius:10,
                 borderWidth:1,
                 borderColor:'grey',
                 margin:4
             }}>
-
+                <Text style={{
+                    fontSize:22,
+                    fontWeight:'bold',
+                    color:'white',
+                    margin:20
+                }}>{this.props.item.hour}</Text>                
             </View>
         )
     }
@@ -31,12 +40,14 @@ export default class HorizontalFlatList extends Component {
         <FlatList 
             style={{backgroundColor: 'black', opacity: 0.5}}
             horizontal={true}
+            data={horizontalFlatListData}
             renderItem={({ item, index}) => {
                 return (
-                    <HorizontalFlatList item={item} index={index} parentFlatList={this}>
-
-                    </HorizontalFlatList>)
+                    <HorizontalFlatListItem item={item} index={index} parentFlatList={this}>
+                        
+                    </HorizontalFlatListItem>)
             }}
+            keyExtractor={(item, index)=> item.hour}
         >
             
         </FlatList>

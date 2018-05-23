@@ -22,7 +22,7 @@ class App extends Component {
       <Fragment>
         {/* //// comment out as needed to preview \\\\ */}
 
-        <HorizontalFlatList msg="Hello"/>
+        <HorizontalFlatList/>
 
         {/* <BasicFlatList /> */}
 
