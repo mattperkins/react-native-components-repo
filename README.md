@@ -5,11 +5,17 @@
 ////////////////////
 Components:
 
+    BasicFlatList upto > https://youtu.be/Gu4rJFIiA6U
     BasicForm (email and password field)
+    Buttons
     FlexAndMapArray (blocks and flex elements)
+    HorizontalScrollView
     ImageFullScreen 
     Props (private to public component exporting to App component)
     TextBlink
+    Touchables
+    VerticalScrollView
+    
 
 ////////////////////
 
