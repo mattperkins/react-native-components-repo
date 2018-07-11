@@ -10,6 +10,8 @@ const images = [
     { id: 2, src: require('../assets/imgs/1002.jpg') }
 ]
 
+const durationSpeed = 250
+
 export default class AppOfDay extends React.Component {
 
     constructor(props) {
@@ -54,34 +56,34 @@ export default class AppOfDay extends React.Component {
                     Animated.parallel([
                         Animated.timing(this.position.x, {
                             toValue: dPageX,
-                            duration: 300,
+                            duration: durationSpeed,
                             easing: Easing.ease
                         }),
 
 
-                        Animated.spring(this.position.y, {
+                        Animated.timing(this.position.y, {
                             toValue: dPageY,
-                            duration: 300,
+                            duration: durationSpeed,
                             easing: Easing.ease
                         }),
 
 
                         Animated.timing(this.dimensions.x, {
                             toValue: dWidth,
-                            duration: 300,
+                            duration: durationSpeed,
                             easing: Easing.ease
                         }),
 
 
-                        Animated.spring(this.dimensions.y, {
+                        Animated.timing(this.dimensions.y, {
                             toValue: dHeight,
-                            duration: 300,
+                            duration: durationSpeed,
                             easing: Easing.ease
                         }),
 
                         Animated.timing(this.animation, {
                             toValue: 1,
-                            duration: 150,
+                            duration: durationSpeed,
                             easing: Easing.ease
                         })
                     ],
@@ -100,34 +102,34 @@ export default class AppOfDay extends React.Component {
         Animated.parallel([
             Animated.timing(this.position.x, {
                 toValue: this.oldPosition.x,
-                duration: 300,
+                duration: durationSpeed,
                 easing: Easing.ease
             }),
 
 
-            Animated.spring(this.position.y, {
+            Animated.timing(this.position.y, {
                 toValue: this.oldPosition.y,
-                duration: 300,
+                duration: durationSpeed,
                 easing: Easing.ease
             }),
 
 
             Animated.timing(this.dimensions.x, {
                 toValue: this.oldPosition.width,
-                duration: 300,
+                duration: durationSpeed,
                 easing: Easing.ease
             }),
 
 
-            Animated.spring(this.dimensions.y, {
+            Animated.timing(this.dimensions.y, {
                 toValue: this.oldPosition.height,
-                duration: 300,
+                duration: durationSpeed,
                 easing: Easing.ease
             }),
 
             Animated.timing(this.animation, {
                 toValue: 0,
-                duration: 150,
+                duration: durationSpeed,
                 easing: Easing.ease
             })
         ],
@@ -153,12 +155,12 @@ export default class AppOfDay extends React.Component {
 
         const animatedContentY = this.animation.interpolate({
             inputRange: [0, 1],
-            outputRange: [250, 0]
+            outputRange: [durationSpeed, 0]
         })
 
         const animatedContentOpacity = this.animation.interpolate({
-            inputRange: [0, 0.5, 1],
-            outputRange: [0, 1, 1]
+            inputRange: [0, 1],
+            outputRange: [0, 1]
         })
 
 
@@ -187,7 +189,7 @@ export default class AppOfDay extends React.Component {
                                 onPress={() => this.openImage(i)}
                                 key={image.id}>
                                 <Animated.View
-                                    style={{ height: SCREEN_HEIGHT - 150, width: SCREEN_WIDTH, padding: 15 }}
+                                    style={{ height: SCREEN_HEIGHT - 150, width: SCREEN_WIDTH, padding: 0 }}
                                 >
                                     {/* source={{ uri: image.src }} */}
                                     <Image
@@ -201,23 +203,29 @@ export default class AppOfDay extends React.Component {
                 </ScrollView>
 
 
+
+
                 <View
                     style={StyleSheet.absoluteFill}
                     pointerEvents={this.state.activeImage ? "auto" : "none"}
                 >
 
+
                     <View
                         style={{ flex: 2, zIndex: 2 }}
                         ref={(view) => (this.viewImage = view)}
                     >
-                        <Animated.Image
-                            source={this.state.activeImage ? this.state.activeImage.src : null}
-                            style={[{ resizeMode: 'cover', top: 0, left: 0, height: null, width: null }, activeImageStyle]}
-                        />
+                        <TouchableWithoutFeedback onPress={() => this.closeImage()} >
+                            <Animated.Image
+                                source={this.state.activeImage ? this.state.activeImage.src : null}
+                                style={[{ resizeMode: 'cover', top: null, left: null, height: null, width: null }, activeImageStyle]}
+                            />
+                        </TouchableWithoutFeedback>
+
                         <TouchableWithoutFeedback onPress={() => this.closeImage()} >
                             <Animated.View
                                 style={[{
-                                    position: 'absolute', top: 30, right: 40, width: 20, height: 20, backgroundColor: '#fff', flex: 1, alignItems: 'center', justifyContent: 'center'
+                                    position: 'absolute', top: 30, right: 40, width: 50, height: 50, backgroundColor: '#fff', flex: 1, alignItems: 'center', justifyContent: 'center'
                                 }, animatedCrossOpacity]}>
                                 <Text
                                     style={{
@@ -225,6 +233,8 @@ export default class AppOfDay extends React.Component {
                                     }}>x</Text>
                             </Animated.View>
                         </TouchableWithoutFeedback>
+
+
                     </View>
 
 
