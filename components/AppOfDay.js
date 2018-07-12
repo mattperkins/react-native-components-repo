@@ -7,7 +7,9 @@ const images = [
     // { id: 1, src: "https://picsum.photos/1001" },
     // { id: 2, src: "https://picsum.photos/1002" }
     { id: 1, src: require('../assets/imgs/1001.jpg') },
-    { id: 2, src: require('../assets/imgs/1002.jpg') }
+    { id: 2, src: require('../assets/imgs/1002.jpg') },
+    { id: 3, src: require('../assets/imgs/1003.jpg') },
+    { id: 4, src: require('../assets/imgs/1004.jpg') },
 ]
 
 const durationSpeed = 250
@@ -155,7 +157,7 @@ export default class AppOfDay extends React.Component {
 
         const animatedContentY = this.animation.interpolate({
             inputRange: [0, 1],
-            outputRange: [durationSpeed, 0]
+            outputRange: [-250, 0]
         })
 
         const animatedContentOpacity = this.animation.interpolate({
@@ -177,7 +179,10 @@ export default class AppOfDay extends React.Component {
         }
 
         return (
+
             <SafeAreaView style={{ flex: 1 }}>
+
+                {/* MULTI IMAGE VIEW  */}
                 <ScrollView
                     style={{ flex: 1 }}
                 >
@@ -189,7 +194,7 @@ export default class AppOfDay extends React.Component {
                                 onPress={() => this.openImage(i)}
                                 key={image.id}>
                                 <Animated.View
-                                    style={{ height: SCREEN_HEIGHT - 150, width: SCREEN_WIDTH, padding: 0 }}
+                                    style={{ height: SCREEN_HEIGHT / 2, width: SCREEN_WIDTH, padding: 0 }}
                                 >
                                     {/* source={{ uri: image.src }} */}
                                     <Image
@@ -203,7 +208,7 @@ export default class AppOfDay extends React.Component {
                 </ScrollView>
 
 
-
+                {/* SINGLE IMAGE VIEW  */}
 
                 <View
                     style={StyleSheet.absoluteFill}
@@ -212,9 +217,10 @@ export default class AppOfDay extends React.Component {
 
 
                     <View
-                        style={{ flex: 2, zIndex: 2 }}
+                        style={{ flex: 1, zIndex: 2 }}
                         ref={(view) => (this.viewImage = view)}
                     >
+
                         <TouchableWithoutFeedback onPress={() => this.closeImage()} >
                             <Animated.Image
                                 source={this.state.activeImage ? this.state.activeImage.src : null}
@@ -238,14 +244,19 @@ export default class AppOfDay extends React.Component {
                     </View>
 
 
-                    <Animated.View
-                        style={[{ flex: 1, zIndex: 1, backgroundColor: 'white', padding: 20, paddingTop: 50 }, animatedContentStyle]}
+                    <Animated.ScrollView
+                        style={[{ flex: 1, zIndex: 1, backgroundColor: 'white', padding: 20, paddingTop: 10 }, animatedContentStyle]}
                     >
+
                         <Text
                             style={{ fontSize: 24, paddingBottom: 10 }}
                         >Title Goes Here</Text>
-                        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, incidunt vitae sapiente neque fugit ex ducimus nesciunt expedita nisi voluptatum sit tenetur in quos doloremque, cupiditate modi. Dignissimos, distinctio magni? </Text>
-                    </Animated.View>
+
+
+                        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, incidunt vitae sapiente neque fugit ex ducimus nesciunt expedita nisi voluptatum sit tenetur in quos doloremque, cupiditate modi. Dignissimos, distinctio magni?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, incidunt vitae sapiente neque fugit ex ducimus nesciunt expedita nisi voluptatum sit tenetur in quos doloremque, cupiditate modi. Dignissimos, distinctio magni?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, incidunt vitae sapiente neque fugit ex ducimus nesciunt expedita nisi voluptatum sit tenetur in quos doloremque, cupiditate modi. Dignissimos, distinctio magni?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, incidunt vitae sapiente neque fugit ex ducimus nesciunt expedita nisi voluptatum sit tenetur in quos doloremque, cupiditate modi. Dignissimos, distinctio magni? </Text>
+
+
+                    </Animated.ScrollView>
 
                 </View>
 
